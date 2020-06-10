@@ -23,8 +23,10 @@ if args.createindex:
     collection.create_index("surname")
 
 if args.deleteindex:
-    print("Delete index on field 'surname'")
-    collection.drop_index("surname_1")
+    if args.deleteindex in list(collection.list_indexes()):
+        print("Delete index on field 'surname'")
+        collection.drop_index("surname_1")
 
+# An explain plan looks at a query's performance
 doc = collection.find({"surname": "Atkinson"}).explain()
 pprint.pprint(doc)

@@ -9,7 +9,7 @@ import gc
 def insert_one_at_a_time(col, total):
     start_time = datetime.utcnow()
     p = Person("en", seed=0xBEE)
-    for i in range(total):
+    for i in range(total):  # 0..total-1
         proxy_person = {"name": p.first_name(),
                         "surname": p.surname(),
                         "email": p.email(),
@@ -42,7 +42,7 @@ def insert_in_batches(col, total, batch_size):
             previous_time = time_now
             print(f"Inserted {len(many_people)} people in {elapsed_time}")
             many_people.clear()
-            gc.collect()
+
     if len(many_people) > 0:
         col.insert_many(many_people)
         inserted_count = inserted_count + len(many_people)
@@ -69,6 +69,7 @@ database = c["test_db"]
 collection = database[args.collection]
 
 if args.drop:
+    print(f"Dropping collection '{args.collection}'")
     collection.drop()
 
 if args.both:
