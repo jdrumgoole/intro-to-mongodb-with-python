@@ -1,6 +1,14 @@
 # intro-to-mongodb-with-python
 Get started using MongoDB and the Python programming language:
 
+All these examples use the MongoDB URI:
+
+```mongodb+srv://livedemo:livedemo@livedemo.atyas.mongodb.net/test_db?retryWrites=true&w=majority```
+
+This URI will not work and must be updated with a valid URI for your server.
+This format of URI is used for MongoDB Atlas servers. For local 
+instances of MongoDB use `http://localhost:27017`.
+
  * **1_ming.py** : How to use the `isMaster` command to ping a MongoDB
  database
  * **2_inserter.py** : How to insert data using `insert_one` and
