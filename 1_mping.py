@@ -22,7 +22,7 @@ if __name__ == "__main__":
         client = pymongo.MongoClient(host=host)
         # The is_master command is cheap and does not require auth. admin
         # is always a db.
-        doc = client.admin.command('isMaster')
+        doc = client.admin.command('hello')
         pprint.pprint(doc)
 
     except ConnectionFailure as e:
