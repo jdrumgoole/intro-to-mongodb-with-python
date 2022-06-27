@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         host = sys.argv[1]
     else:
-        host = "mongodb+srv://livedemo:livedemo@livedemo.atyas.mongodb.net/?retryWrites=true&w=majority"
+        host = "http://localhost:27017"
     try:
         client = pymongo.MongoClient(host=host)
         # The is_master command is cheap and does not require auth. admin

@@ -3,7 +3,6 @@ import argparse
 
 import pymongo
 from mimesis import Person
-import gc
 
 
 def insert_one_at_a_time(col, total):
@@ -63,7 +62,7 @@ parser.add_argument("--drop", default=False, action="store_true")
 args = parser.parse_args()
 
 c = pymongo.MongoClient(
-    host="mongodb+srv://livedemo:livedemo@livedemo.atyas.mongodb.net/test_db?retryWrites=true&w=majority")
+    host="http://localhost:27017")
 
 database = c["test_db"]
 collection = database[args.collection]

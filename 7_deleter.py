@@ -4,7 +4,7 @@ import pymongo
 
 # Connection object
 c = pymongo.MongoClient(
-    host="mongodb+srv://livedemo:livedemo@livedemo.atyas.mongodb.net/test_db?retryWrites=true&w=majority")
+    host="http://localhost:27017")
 
 # database object
 database = c["test_db"]
