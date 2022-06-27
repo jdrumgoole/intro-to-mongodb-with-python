@@ -16,3 +16,7 @@ For local instances of MongoDB use `http://localhost:27017`.
  * **6_indexer_explainer.py** : How to index collections and also
  measure query performance.
  * **7_deleter.py** : How to delete data from a collection.
+
+For the aggregation demos you will need access to a public data set. Please
+email Joe.Drumgoole@mongodb.com who can grant access on Atlas.
+
